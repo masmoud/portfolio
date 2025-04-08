@@ -11,6 +11,8 @@ export const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
   const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
@@ -52,6 +54,8 @@ export const Contact = () => {
 
     console.log(SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY);
 
+    setLoading(true);
+
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then((result) => {
@@ -69,9 +73,11 @@ export const Contact = () => {
           },
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
+        setLoading(false);
       })
       .catch(() => {
         toast.error("Oops! Something went wrong! Please try again.");
+        setLoading(false);
       });
   };
 
@@ -88,6 +94,7 @@ export const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
+                required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full bg-white/5 border border-white/10 rounded  px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
@@ -99,6 +106,7 @@ export const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
+                required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-white/5 border border-white/10 rounded  px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
@@ -110,6 +118,7 @@ export const Contact = () => {
                 type="text"
                 id="subject"
                 name="subject"
+                required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 className="w-full bg-white/5 border border-white/10 rounded  px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
@@ -120,6 +129,7 @@ export const Contact = () => {
               <textarea
                 id="message"
                 name="message"
+                required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 rows={5}
@@ -129,9 +139,11 @@ export const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 px-4 font-medium cursor-pointer rounded transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
-              {" "}
-              Send Message{" "}
+              disabled={isNotEmpty || loading}
+              className={`w-full  text-white py-3 px-4 font-medium cursor-pointer rounded transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] ${
+                isNotEmpty ? "bg-gray-400" : "bg-blue-500"
+              } `}>
+              {loading ? <span className="animate-pulse">Sending...</span> : "Send Message"}
             </button>
           </form>
         </div>
