@@ -4,8 +4,10 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { MobileMenu } from "./components/MobileMenu";
 import { Navbar } from "./components/Navbar";
 import { About } from "./components/sections/About";
+import { Contact } from "./components/sections/Contact";
 import { Home } from "./components/sections/Home";
 import { Projects } from "./components/sections/Projects";
+import { Toaster } from "react-hot-toast";
 import "./index.css";
 
 function App() {
@@ -28,7 +30,7 @@ function App() {
     };
   });
   return (
-    <>
+    <div>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
 
       <div
@@ -40,8 +42,10 @@ function App() {
         <Home />
         <About />
         <Projects />
+        <Contact />
       </div>
-    </>
+      <Toaster position="top-right" reverseOrder={false} />
+    </div>
   );
 }
 
