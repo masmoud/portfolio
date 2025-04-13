@@ -1,37 +1,23 @@
 import React from "react";
+import ecom from "../assets/ecom.png";
+import mern from "../assets/mern.png";
 
 const projects = [
   {
-    title: "Project Title 1",
-    description: "Project description goes here. It's a placeholder for now.",
-    technologies: ["Tech 1", "Tech 2", "Tech 3", "Tech 4"],
-    imageUrl: "https://picsum.photos/200/300", // Placeholder pour l'image
+    title: "MERN AUth",
+    description: "An authentification application with the MERN stack",
+    technologies: ["React Router v7", "TypeScript", "Express", "MongoDB", "TailwindCSS", "Zustand"],
+    imageUrl: mern, // Placeholder pour l'image
     demoUrl: "#", // Placeholder pour le lien de la démo
-    repoUrl: "#", // Placeholder pour le lien du repo GitHub
+    repoUrl: "https://github.com/masmoud/mern-auth", // Placeholder pour le lien du repo GitHub
   },
   {
-    title: "Project Title 2",
-    description: "Project description goes here. It's a placeholder for now.",
-    technologies: ["Tech 1", "Tech 2", "Tech 3", "Tech 4"],
-    imageUrl: "https://picsum.photos/200/300", // Placeholder pour l'image
-    demoUrl: "#", // Placeholder pour le lien de la démo
-    repoUrl: "#", // Placeholder pour le lien du repo GitHub
-  },
-  {
-    title: "Project Title 3",
-    description: "Project description goes here. It's a placeholder for now.",
-    technologies: ["Tech 1", "Tech 2", "Tech 3", "Tech 4"],
-    imageUrl: "https://picsum.photos/200/300", // Placeholder pour l'image
-    demoUrl: "#", // Placeholder pour le lien de la démo
-    repoUrl: "#", // Placeholder pour le lien du repo GitHub
-  },
-  {
-    title: "Project Title 4",
-    description: "Project description goes here. It's a placeholder for now.",
-    technologies: ["Tech 1", "Tech 2", "Tech 3", "Tech 4"],
-    imageUrl: "https://picsum.photos/200/300", // Placeholder pour l'image
-    demoUrl: "#", // Placeholder pour le lien de la démo
-    repoUrl: "#", // Placeholder pour le lien du repo GitHub
+    title: "My Ecommerce",
+    description: "A modern e-commerce application ",
+    technologies: ["Next.js", "TailwindCSS", "TypeScript", "Stripe"],
+    imageUrl: ecom, // Placeholder pour l'image
+    demoUrl: "https://my-ecom-seven.vercel.app/", // Placeholder pour le lien de la démo
+    repoUrl: "https://github.com/masmoud/ecom-project", // Placeholder pour le lien du repo GitHub
   },
 ];
 
