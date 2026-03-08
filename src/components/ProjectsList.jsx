@@ -25,7 +25,7 @@ const projects = [
     description: "A production-ready backend boilerplate ",
     technologies: ["Node.js", "TypeScript", "Express", "MongoDB", "Zod"],
     imageUrl: backend, // Placeholder pour l'image
-    demoUrl: "masmoud-auth-api.up.railway.app/api/v1", // Placeholder pour le lien de la démo
+    demoUrl: "https://masmoud-auth-api.up.railway.app/api/v1", // Placeholder pour le lien de la démo
     repoUrl: "https://github.com/masmoud/masmoud-rest-api", // Placeholder pour le lien du repo GitHub
   },
 ];
