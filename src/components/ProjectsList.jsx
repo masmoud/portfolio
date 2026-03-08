@@ -1,6 +1,7 @@
 import React from "react";
 import ecom from "../assets/ecom.png";
 import mern from "../assets/mern.png";
+import backend from "../assets/backend.png";
 
 const projects = [
   {
@@ -18,6 +19,14 @@ const projects = [
     imageUrl: ecom, // Placeholder pour l'image
     demoUrl: "https://my-ecom-seven.vercel.app/", // Placeholder pour le lien de la démo
     repoUrl: "https://github.com/masmoud/ecom-project", // Placeholder pour le lien du repo GitHub
+  },
+  {
+    title: "Backend Boilerplate",
+    description: "A production-ready backend boilerplate ",
+    technologies: ["Node.js", "TypeScript", "Express", "MongoDB", "Zod"],
+    imageUrl: backend, // Placeholder pour l'image
+    demoUrl: "masmoud-auth-api.up.railway.app/api/v1", // Placeholder pour le lien de la démo
+    repoUrl: "https://github.com/masmoud/masmoud-rest-api", // Placeholder pour le lien du repo GitHub
   },
 ];
 
